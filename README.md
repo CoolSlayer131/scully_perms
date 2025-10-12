@@ -10,7 +10,7 @@ Join our [Discord](https://discord.gg/scully) server for help, updates, and comm
 - Easy permission checking
 - Supports single and multiple permission checks
 - Integrates seamlessly with FiveM's ACE system
-- Optional discord membership with adaptive card
+- Optional discord membership requirement with adaptive card
 - Optional age verification
 
 ## Installation
