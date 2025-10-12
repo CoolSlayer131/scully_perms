@@ -1,5 +1,5 @@
 # Scully Perms
-<img width="900" height="150" alt="Untitled" src="https://github.com/user-attachments/assets/03d27c5c-1ad1-4562-8a89-f58c890c4048" />
+<img width="900" height="150" alt="image" src="https://raw.githubusercontent.com/Scullyy/scully_perms/refs/heads/main/images/banner.png" />
 
 A lightweight permissions system for FiveM servers to manage role-based permissions efficiently.
 
@@ -10,7 +10,8 @@ Join our [Discord](https://discord.gg/scully) server for help, updates, and comm
 - Easy permission checking
 - Supports single and multiple permission checks
 - Integrates seamlessly with FiveM's ACE system
-- Optional discord membership requirement with adaptive card
+- Optional discord membership with adaptive card
+- Optional age verification
 
 ## Installation
 1. Download and add the `scully_perms` resource to your server's `resources` folder.
@@ -24,6 +25,9 @@ add_ace resource.scully_perms command.remove_principal allow
 ```
 
 3. Restart your server.
+
+## Preview
+<img alt="image" src="https://raw.githubusercontent.com/Scullyy/scully_perms/refs/heads/main/images/preview.png" />
 
 ## Usage
 You can verify if a player has specific permissions using the provided exports. These can be called from other resources.
