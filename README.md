@@ -11,7 +11,6 @@ Join our [Discord](https://discord.gg/scully) server for help, updates, and comm
 - Supports single and multiple permission checks
 - Integrates seamlessly with FiveM's ACE system
 - Optional discord membership requirement with adaptive card
-- Optional refresh command
 
 ## Installation
 1. Download and add the `scully_perms` resource to your server's `resources` folder.
