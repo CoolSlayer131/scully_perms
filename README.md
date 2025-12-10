@@ -1,3 +1,5 @@
+# NEEDS TESTING THIS IS UNTESTED BY MYSELF
+
 # Scully Perms
 <img width="900" height="150" alt="image" src="https://raw.githubusercontent.com/Scullyy/scully_perms/refs/heads/main/images/banner.png" />
 
