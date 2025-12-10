@@ -9,7 +9,9 @@ Join our [Discord](https://discord.gg/scully) server for help, updates, and comm
 ## Features
 - Easy permission checking
 - Supports single and multiple permission checks
-- Integrates seamlessly with FiveM's ACE system
+- Multi-guild support (map permissions per Discord server)
+- Live permission refresh command
+- Role-ID export for ad-hoc checks
 - Optional discord membership requirement with adaptive card
 - Optional age verification
 
@@ -51,6 +53,52 @@ else
     print('Does not have permissions!')
 end
 ```
+
+### Role ID Check (no config entry required)
+Check if a player currently has a specific Discord role ID (or any in a list).
+```lua
+if exports.scully_perms:hasRole(source, '123456789012345678') then
+    print('Has the role!')
+end
+
+-- Multiple IDs
+if exports.scully_perms:hasRole(source, {'role1', 'role2'}) then
+    print('Has at least one of the roles!')
+end
+```
+
+### Refresh Permissions In-Game
+Refresh the caller's permissions without a reconnect:
+```
+/refreshperms
+```
+From console (or players with the configured ACE), you can refresh another player:
+```
+refreshperms 15
+```
+
+## Multi-Guild Setup
+If you run multiple Discord guilds, define them in `Config.Guilds`. Each block maps permissions for that guild:
+```lua
+Guilds = {
+    {
+        GuildId = '123',
+        RequireMembership = true, -- counts toward the membership gate if enabled
+        Permissions = {
+            ['leo'] = { 'roleA', 'roleB' },
+            ['fire'] = 'roleC'
+        }
+    },
+    {
+        GuildId = '456',
+        RequireMembership = false,
+        Permissions = {
+            ['civ'] = 'roleX'
+        }
+    }
+}
+```
+If `Guilds` is empty, the script falls back to the single `GuildId`/`Permissions` entries.
 
 # License
 This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
