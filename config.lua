@@ -1,15 +1,35 @@
 Config = {
     EnableDebug = false, -- Will log error codes, permission grants and removals to server console.
+
     GuildId = '', -- Your discord guild ID. (Tutorial: https://github-wiki-see.page/m/manix84/discord_gmod_addon_v2/wiki/Finding-your-Guild-ID-%28Server-ID%29)
     BotToken = '', -- Your discord bot token from the discord developer portal. (Tutorial: https://www.writebots.com/discord-bot-token/)
+
+    Guilds = { -- Optional multi-guild support. If left empty, GuildId + Permissions above will be used.
+        -- {
+        --     GuildId = '123', -- Guild ID this block is for.
+        --     RequireMembership = true, -- If true, this guild counts toward the membership gate when enabled.
+        --     Permissions = {
+        --         ['perm'] = 'roleid',
+        --         ['perm2'] = { 'roleid', 'roleid2', 'roleid3' }
+        --     }
+        -- }
+    },
 
     Permissions = { -- Your permissions list, can be used as a string or table.
         ['perm'] = 'roleid', -- Method example 1
         ['perm2'] = { 'roleid', 'roleid2', 'roleid3' } -- Method example 2
     },
 
+    RefreshPermissions = {
+        Command = 'refreshperms', -- Command to refresh permissions. Console can refresh others with an id: refreshperms 15
+        AllowPlayerUse = true, -- If true, players can refresh their own permissions with /refreshperms.
+        AllowTargetArgument = false, -- If true, players can refresh others with /refreshperms [id]. Otherwise only console/ACE below.
+        TargetAce = 'scully_perms.refresh' -- Optional ACE that allows players to refresh others when AllowTargetArgument is false.
+    },
+
     MembershipRequired = {
         Enable = false, -- Set to true if you only want discord members to be able to join your server.
+        RequiredGuildIds = {}, -- Optional list of guilds to count toward membership. Empty = any configured guild marked RequireMembership.
         EnableAgeVerification = false, -- Set to true to enable age verification.
         AgeVerificationMessage = 'I confirm that I am at least 18 years old, or if under 18, I have received permission from a parent or legal guardian to play.', -- Checkbox message for age verification.
         NotMemberError = 'You must join our discord to connect to the server.', -- Displayed to those who aren't in the discord.
